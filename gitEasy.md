@@ -124,6 +124,23 @@ Voici ce qu'on obtient
 
 Le fichier est en rouge donc ça veut dire que les modifications n'ont pas encore été indexées donc nous ne sommes pas encore prêt à commit
 
+### Introduction au fichier de config
+
+Le fichier de config est un fichier global à git partagé entre tous vos projets. Il permet de simplifier certaines commandes ou d'ajouter des informations par exemple.
+Dans notre cas, nous allons indiquer à git qui nous sommes.
+Voici les 2 commandes à taper :
+
+```
+git config --global user.email [votre email]
+git config --global user.name [prenom nom]
+```
+
+Vous pouvez également à tout moment avoir accès à configuration complète :
+
+```
+git config --global -l
+```
+
 ### Indexation, commit & push
 
 #### Indexation
@@ -164,3 +181,24 @@ Pour consulter l'historique des commits effectués vous avez la commande suivant
 ```
 git log
 ```
+
+Le git log étant assez moche, nous allons créer un alias dans le fichier de configuration. Un alias est un mot clé qu'on pourra par la suite utiliser pour une action spécifique, voici un exemple :
+
+```
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+Ici on crée un alias qu'on appelle lg qui est en fait un log customisé et simplifié avec des couleurs.
+
+Vous pouvez maintenant lancer la commande
+
+```
+git lg
+```
+
+C'est quand même beaucoup plus lisible ! :)
+
+## À vous de jouer
+
+A partir de la branche develop, tirer une nouvelle branche dans laquelle vous ajouterez un nouveau fichier (exemple.txt). Commitez le et pousser le.
+Petite particularité, ce fichier contiendra l'ensemble des commandes que vous avez utilisé pour faire cette exercice.
