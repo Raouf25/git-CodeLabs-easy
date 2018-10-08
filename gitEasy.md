@@ -198,7 +198,57 @@ git lg
 
 C'est quand même beaucoup plus lisible ! :)
 
+### Reset
+
+Git nous offre la possibilité d'annuler une action qu'on vient de faire. Attention toutefois certaines annulations peuvent être dangeureuses ! Voici 2 exemples :
+
+#### Soft
+
+Petit rappel la commande git add permet d'indexer un ou plusieurs fichiers avant le commit. Pour voir que ces fichiers ont bien été indexés vous pouvez exécuter la commande git status qui vous indiquera l'état de chaque fichier. Si un fichier est rouge c'est qu'il n'est pas indexé, c'est à dire qu'il n'est pas prêt à être commit. À l'inverse si il est vert c'est qu'il peut être commit. On a vu précédemment comment faire passer un fichier du rouge au vert (donc prêt à être commit), voyons maintenant comment le faire passer du vert au rouge !
+Voici la commande :
+
+```
+git reset
+```
+
+On appelle ce reset "soft" car il ne fait que modifier l'état d'un fichier mais garde toutes les modifications qui ont pu être effectuées.
+
+#### Hard
+
+Le reset "hard" va un peu plus loin que le reset soft dans le sens ou il supprime également toutes les modifications d'un fichier. C'est une commande très puissante mais qui peut s'avérer dangeureuse car vos modifications seront perdu à tout jamais !
+
+```
+git reset --hard
+```
+
+#### Checkout
+
+On peut se retrouver dans le cas suivant : 2 fichiers ont été modifiés et sont prêts à être commit, mais on s'aperçoit qu'un des 2 fichiers a été modifié à tort donc on aimerait revenir à l'état initial. Le problème du reset --hard est qu'il s'applique à TOUS les fichiers...ce qui est plutôt embêtant dans notre cas. Heureusement il est possible de faire ça fichier par fichier. Pour cela :
+
+```
+git checkout le-nom-de-mon-fichier
+```
+
 ## À vous de jouer
 
-A partir de la branche develop, tirer une nouvelle branche dans laquelle vous ajouterez un nouveau fichier (exemple.txt). Commitez le et pousser le.
+1. Créer une nouvelle branche
+2. Créer un fichier (example.txt)
+3. Ajouter dans ce fichier l'ensemble des commandes qui vous servira à push sur votre branche
+4. Indexer ce fichier (sans le commit !!)
+5. Vérifier que ce fichier est bien dans l'index
+6. Supprimer le fichier (Avec git bien évidemment :))
+7. Modifier le fichier README.md en ajoutant vos impressions sur git !
+8. Indexer/commit et push de votre branche
+9. Regarder votre historique !
+
+Pour aller plus loin
+
+10. Tirer une nouvelle branche
+11. Créer un nouveau fichier
+12. Modifier le fichier README.md
+13. Indexer les 2 fichiers
+14. Supprimer les modifications précédemment ajoutées au fichier README.md (Toujours avec git :))
+15. Indexer/commit et push de votre branche
+16. Regarder votre historique !
+
 Petite particularité, ce fichier contiendra l'ensemble des commandes que vous avez utilisé pour faire cette exercice.
