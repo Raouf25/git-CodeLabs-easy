@@ -36,27 +36,27 @@ cd git
 
 ### Liste des branches disponibles
 
-Pour récupérer la liste des branches, entrez la commande ci-dessous
+Pour récupérer la liste des branches, entrez la commande ci-dessous :
 
 ```
 git branch
 ```
 
-À ce stade nous n'avons qu'une seule et unique branche "master", comme cette branche n'est destinée qu'à la production nous allons devoir en créer une autre pour le développement.
+À ce stade nous n'avons qu'une seule et unique branche **master**, comme cette branche n'est destinée qu'à la production nous allons devoir en créer une autre pour le développement.
 
 ### Création d'une branche
 
-Pour créer une nouvelle branche, entrez la commande suivante
+Pour créer une nouvelle branche, entrez la commande suivante :
 
 ```
 git branch develop
 ```
 
-La branche develop vient d'être créée, pourtant nous sommes toujours sur la branche master, pour s'en rendre compte faîtes la commande git branch que vous maitrisez maintenant parfaitement bien :)
+La branche **develop** vient d'être créée, pourtant nous sommes toujours sur la branche **master**, pour s'en rendre compte faîtes la commande git branch que vous maitrisez maintenant parfaitement bien :)
 
 ### Changement de branche
 
-Nous devons maintenant nous placer sur la develop pour pouvoir commencer à travailler
+Nous devons maintenant nous placer sur la **develop** pour pouvoir commencer à travailler :
 
 ```
 git checkout develop
@@ -70,7 +70,7 @@ Nous sommes maintenant prêt à travailler !
 
 ### Astuce pour chaque nouvelle branche
 
-On a vu précédemment comment créer une nouvelle branche et comment se placer dessus. Mais tout dev qui se respecte est fénéant et faire 2 commandes pour une simple action ne me plaît pas ! Heureusement git nous permet de faire cette opération en une, pour cela entrez la commande suivante :
+On a vu précédemment comment créer une nouvelle branche et comment se placer dessus. Mais tout dev qui se respecte est fénéant et faire 2 commandes pour une simple action ne me plaît pas ! Heureusement git nous permet de faire ces 2 opérations en une, pour cela entrez la commande suivante :
 
 ```
 git checkout -b le-nom-de-ma-nouvelle-branche
@@ -82,7 +82,7 @@ le -b signifie ici nouvelle branche
 
 #### Création
 
-Maintenant que vous connaissez la commande pour créer et switcher sur une nouvelle branche vous pouvez créer la branche 'first-commit' :
+Maintenant que vous connaissez la commande pour créer et switcher sur une nouvelle branche vous pouvez créer la branche **first-commit** :
 
 ```
 git checkout -b first-commit
@@ -122,7 +122,7 @@ git status
 Voici ce qu'on obtient
 ![git-status](screenshots/git-status.png)
 
-Le fichier est en rouge donc ça veut dire que les modifications n'ont pas encore été indexées donc nous ne sommes pas encore prêt à commit
+Le fichier est en rouge donc ça veut dire que les modifications n'ont pas encore été indexées donc nous ne sommes pas encore prêt à commit.
 
 ### Introduction au fichier de config
 
@@ -135,7 +135,7 @@ git config --global user.email [votre email]
 git config --global user.name [prenom nom]
 ```
 
-Vous pouvez également à tout moment avoir accès à configuration complète :
+Vous pouvez également à tout moment avoir accès à la configuration complète :
 
 ```
 git config --global -l
@@ -145,9 +145,9 @@ git config --global -l
 
 #### Indexation
 
-Après avoir modifié un ou plus fichiers, il faut les indexer, c'est à dire indiquer à git que ces derniers sont prêts à être commit
+Après avoir modifié un ou plus fichiers, il faut les indexer, c'est à dire indiquer à git que ces derniers sont prêts à être commit.
 
-Pour cela exécutez la commande suivante
+Pour cela exécutez la commande suivante :
 
 ```
 git add README.md
@@ -158,7 +158,7 @@ puis un 'git status', vous obtenez ceci
 
 #### Commit
 
-Le fichier est maintenant prêt à être commit sur la remote, voici la commande
+Le fichier est maintenant prêt à être commit sur la remote, voici la commande :
 
 ```
 git commit -m "feat(readme): add CodeLabs infos"
@@ -168,7 +168,7 @@ En faisant un 'git status' on s'aperçoit que les modifications ont bien été p
 
 #### Push
 
-En l'état actuel des choses les modifications sont sur la remote mais pas encore sur le repo distant, pour cela exécutez la commande suivante
+En l'état actuel des choses les modifications sont sur la remote mais pas encore sur le repo distant, pour cela exécutez la commande suivante :
 
 ```
 git push origin feat/first-commit
@@ -176,7 +176,7 @@ git push origin feat/first-commit
 
 ### Historique
 
-Pour consulter l'historique des commits effectués vous avez la commande suivante
+Pour consulter l'historique des commits effectués vous avez la commande suivante :
 
 ```
 git log
@@ -190,7 +190,7 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 Ici on crée un alias qu'on appelle lg qui est en fait un log customisé et simplifié avec des couleurs.
 
-Vous pouvez maintenant lancer la commande
+Vous pouvez maintenant lancer la commande :
 
 ```
 git lg
@@ -215,7 +215,7 @@ On appelle ce reset "soft" car il ne fait que modifier l'état d'un fichier mais
 
 #### Hard
 
-Le reset "hard" va un peu plus loin que le reset soft dans le sens ou il supprime également toutes les modifications d'un fichier. C'est une commande très puissante mais qui peut s'avérer dangeureuse car vos modifications seront perdu à tout jamais !
+Le reset "hard" va un peu plus loin que le reset soft dans le sens où il supprime également toutes les modifications d'un fichier. C'est une commande très puissante mais qui peut s'avérer dangeureuse car vos modifications seront perdues à tout jamais !
 
 ```
 git reset --hard
@@ -250,5 +250,3 @@ Pour aller plus loin
 14. Supprimer les modifications précédemment ajoutées au fichier README.md (Toujours avec git :))
 15. Indexer/commit et push de votre branche
 16. Regarder votre historique !
-
-Petite particularité, ce fichier contiendra l'ensemble des commandes que vous avez utilisé pour faire cette exercice.
