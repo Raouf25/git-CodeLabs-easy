@@ -173,7 +173,14 @@ En l'état actuel des choses les modifications sont sur la remote mais pas encor
 ```
 git push origin feat/first-commit
 ```
-
+Pour déduire la partie origine my_branch vous pouvez ajouter cette configuration
+```
+git config --global push.default current
+```
+Maintenant vous pouvez faire:
+```
+git push
+```
 ### Historique
 
 Pour consulter l'historique des commits effectués vous avez la commande suivante :
